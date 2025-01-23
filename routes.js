@@ -11,10 +11,10 @@ res.render("index", {
 
 app.get("/api/about", (req, res) => {
     res.json({
-        name:"Your Jamar JOhnson",
+        name:" Jamar JOhnson",
         bio:"This is about me",
         Skills: ["skill1", "skill2", "skill3"]
-    }
+    })
 });
 
 app.get("/api/projects", (req, res) => {
@@ -24,7 +24,7 @@ app.get("/api/projects", (req, res) => {
     ])
 })
 
-app.post("/api/contact", (req, res) => {
+app.post("/api/contacts", (req, res) => {
     const {name, message} = req.body;
     console.log(`Message from ${name}: ${message}`);
     res.send("Thank you for your message");

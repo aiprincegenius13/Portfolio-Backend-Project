@@ -1,8 +1,14 @@
-// function error(status, msg) {
-//     var err = new Error(msg);
-//     err.status = status;
-//     return err;
-//   }
-  
-//   module.exports = error;
-  
+// Error-handling middleware
+function errorHandler(err, req, res, next) {
+    const status = err.status || 500;
+    const message = err.message || "Internal Server Error";
+
+    res.status(status).json({
+        error: {
+            status,
+            message,
+        },
+    });
+}
+
+module.exports = errorHandler;
