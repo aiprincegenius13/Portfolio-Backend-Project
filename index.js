@@ -1,8 +1,8 @@
 const express = require("express");
-const routes = require("./route"); // Assuming your route file is named 'route.js'
+const routes = require("./routes"); // Assuming your route file is named 'route.js'
 const errorHandler = require("./error"); // Import the error handling middleware
 const app = express();
-const port = 8081;
+const port = 8081; 
 
 // Middleware for parsing JSON and URL-encoded data
 app.use(express.json());

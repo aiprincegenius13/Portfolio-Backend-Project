@@ -1,4 +1,4 @@
-var require = nodeRequire
+// var require = nodeRequire
 const express = require("express");
 const router = express.Router();
 
@@ -9,7 +9,7 @@ res.render("index", {
     });
 });
 
-app.get("/api/about", (req, res) => {
+router.get("/api/about", (req, res) => {
     res.json({
         name:" Jamar JOhnson",
         bio:"This is about me",
@@ -17,15 +17,16 @@ app.get("/api/about", (req, res) => {
     })
 });
 
-app.get("/api/projects", (req, res) => {
+router.get("/api/projects", (req, res) => {
     res.json([
        {id: 1, title: "Portfolio Website", description: "My personal website"},
        {id: 2, title: "project1", description: "A description of project"},
     ])
 })
 
-app.post("/api/contacts", (req, res) => {
+router.post("/api/contacts", (req, res) => {
     const {name, message} = req.body;
     console.log(`Message from ${name}: ${message}`);
     res.send("Thank you for your message");
 })
+module.exports = router

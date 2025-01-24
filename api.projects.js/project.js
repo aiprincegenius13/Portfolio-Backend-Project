@@ -1,4 +1,4 @@
-// Example function to return project data
+// function to return project data
 const getProjects = (req, res) => {
     const projects = [
         { id: 1, title: "Portfolio Website", description: "My personal website" },
