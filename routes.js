@@ -2,12 +2,12 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-res.render("index", {
-    name: "Jamar Johnson",
-    bio: "Short Bio"
-    });
-});
+// router.get("/", (req, res) => {
+// res.render("index", {
+//     name: "Jamar Johnson",
+//     bio: "Short Bio"
+//     });
+// });
 
 router.get("/api/about", (req, res) => {
     res.json({
@@ -29,4 +29,13 @@ router.post("/api/contacts", (req, res) => {
     console.log(`Message from ${name}: ${message}`);
     res.send("Thank you for your message");
 })
+
+function getRoutes() {
+    return ['/home', '/projects', '/about'];
+  }
+  
+  module.exports = {
+    getRoutes,
+  };
+  
 module.exports = router

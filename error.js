@@ -11,4 +11,17 @@ function errorHandler(err, req, res, next) {
     });
 }
 
+function handleError(error) {
+    console.error(`[ERROR]: ${error.message}`);
+  }
+  
+  function notFound(req, res) {
+    res.status(404).send('Not Found');
+  }
+  
+  module.exports = {
+    handleError,
+    notFound,
+  };
+  
 module.exports = errorHandler;
